@@ -67,8 +67,8 @@ const Experience = () => {
         <Sparkles
           size={6}
           scale={[4, 2, 4]}
-          position-y={1}
-          speed={0.3}
+          position-y={1.2}
+          speed={0.4}
           count={50}
         />
       </Center>
