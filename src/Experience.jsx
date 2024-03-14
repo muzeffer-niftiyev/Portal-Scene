@@ -33,14 +33,19 @@ const Experience = () => {
 
   const portalMaterial = useRef();
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     portalMaterial.current.uTime += delta;
   });
 
   return (
     <>
       <color args={["#110c0c"]} attach={"background"} />
-      <OrbitControls makeDefault />
+      <OrbitControls
+        makeDefault
+        maxPolarAngle={Math.PI / 2}
+        maxDistance={Math.PI * 3}
+        minDistance={Math.PI * 1.5}
+      />
 
       <Center>
         <mesh geometry={nodes.baked.geometry}>
@@ -56,7 +61,7 @@ const Experience = () => {
         </mesh>
 
         <mesh geometry={portal.geometry} rotation={portal.rotation}>
-          <portalMaterial ref={portalMaterial} />
+          <portalMaterial ref={portalMaterial} side={THREE.DoubleSide} />
         </mesh>
 
         <Sparkles
