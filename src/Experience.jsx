@@ -39,9 +39,10 @@ const Experience = () => {
 
   return (
     <>
-      <color args={["#110c0c"]} attach={"background"} />
+      <color args={["#160f0f"]} attach={"background"} />
       <OrbitControls
         makeDefault
+        rotateSpeed={0.3}
         maxPolarAngle={Math.PI / 2}
         maxDistance={Math.PI * 3}
         minDistance={Math.PI * 1.5}
